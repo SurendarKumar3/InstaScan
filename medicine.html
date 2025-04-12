@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Language" content="en" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>InstaScan - Results</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/animation.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/3d-effects.css" />
+  </head>
+  <body class="antialiased">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-2">
+            <div class="text-2xl font-bold text-blue-600">InstaScan</div>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2481/2481929.png"
+              alt="Logo"
+              class="w-8 h-8"
+            />
+          </div>
+
+          <!-- Mobile Navigation Button -->
+          <div class="md:hidden ml-auto mr-4 bg-blue-600 p-2 rounded-lg">
+            <a
+              href="index.html"
+              class="text-white hover:text-blue-600 transition px-4 py-2 rounded-lg hover:bg-blue-50"
+            >
+              Scan 📸
+            </a>
+          </div>
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex space-x-6 items-center">
+            <a href="index.html" class="text-gray-600 hover:text-blue-600 transition">Home</a>
+            <a href="chatbot.html" class="text-gray-600 hover:text-blue-600 transition">Chatbot</a>
+            <a href="#" class="text-blue-600">Medicine</a>
+            <a href="food.html" class="text-gray-600 hover:text-blue-600 transition">Food</a>
+            <a href="cosmetics.html" class="text-gray-600 hover:text-blue-600 transition">Cosmetics</a>
+            
+            <!-- Visible Google Translate element -->
+            <div id="google_translate_element" class="ml-4"></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Results Section -->
+    <section id="results" class="pt-32 pb-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <!-- Image Card -->
+        <div id="imageCard" class="mb-8">
+          <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="p-4">
+              <h2 class="text-xl font-semibold text-gray-800 mb-4">
+                Product Image
+              </h2>
+              <img
+                id="productImage"
+                src=""
+                alt="Scanned Product"
+                class="w-full h-96 object-contain rounded-lg bg-gray-100"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Cards Container -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          id="cardsContainer"
+        ></div>
+
+        <!-- Additional Note Card -->
+        <a
+          href="index.html"
+          class="text-blue-600 hover:text-blue-700 hover:underline transition-colors"
+        >
+          <div class="mt-8 bg-white rounded-xl shadow-md p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-3">Note ⚠️</h3>
+            <p class="text-gray-600">
+              If the results are not satisfactory or incorrect, please click
+              here to try with a different photo or angle. 👆
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center space-x-2">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2481/2481929.png"
+              alt="Logo"
+              class="w-8 h-8"
+            />
+            <div class="text-2xl font-bold">InstaScan</div>
+          </div>
+          <div class="flex space-x-8">
+            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+            <a href="index.html#features" class="hover:text-blue-400 transition"
+              >Features</a
+            >
+            <a href="index.html#about" class="hover:text-blue-400 transition"
+              >About Us</a
+            >
+            <a href="index.html#contact" class="hover:text-blue-400 transition"
+              >Contact</a
+            >
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-8 pt-8 text-center md:text-right"
+        >
+          <p class="text-gray-400">
+            &copy; 2023 InstaScan. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./scripts/language.js"></script>
+    <script src="./scripts/medicine.js"></script>
+    <script src="./scripts/3d-effects.js"></script>
+    
+    <!-- Floating Chat Button -->
+    <a href="chatbot.html" class="fixed bottom-6 right-6 bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 z-50">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+      </svg>
+    </a>
+  </body>
+</html>

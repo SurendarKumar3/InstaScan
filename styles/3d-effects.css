@@ -1,0 +1,127 @@
+/* 3D Effects and Animations */
+
+/* Scan Animation */
+.scan-animation {
+  animation: float 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotateY(0deg);
+  }
+}
+
+/* Scanning line effect */
+.scan-line {
+  width: 80%;
+  height: 5px;
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0) 0%, rgba(59, 130, 246, 0.8) 50%, rgba(59, 130, 246, 0) 100%);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+  animation: scan 3s ease-in-out infinite;
+  border-radius: 2px;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+/* Text animation for headers */
+.animate-text {
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
+  }
+  50% {
+    text-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+  }
+}
+
+/* 3D Card Effects */
+.card-3d {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.card-3d:hover {
+  transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Glassmorphism Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+}
+
+/* Pulse Effect for Buttons */
+.pulse-effect {
+  position: relative;
+}
+
+.pulse-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+/* 3D Chatbot Animation */
+.chatbot-3d-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.chatbot-3d {
+  transform: rotateY(10deg) rotateX(5deg);
+  transition: transform 0.5s ease;
+  box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-3d:hover {
+  transform: rotateY(0deg) rotateX(0deg);
+} 
